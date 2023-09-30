@@ -11,8 +11,8 @@ pipeline {
  
         stage('RestoreNuget') {
             steps {
-                // Check out the source code from your repository
-                bat '''dotnet restore HelloWorldConsoleApp.csproj'''
+                   // Restore the NuGet packages
+                    bat '''dotnet restore HelloWorldConsoleApp.csproj'''
             }
         }
         
