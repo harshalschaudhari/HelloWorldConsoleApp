@@ -11,8 +11,8 @@ pipeline {
  
         stage('RestoreNuget') {
             steps {
-                // Restore the NuGet packages
-                bat '''C:/ProgramData/chocolatey/bin/nuget.exe restore HelloWorldConsoleApp.csproj'''
+                   // Restore the NuGet packages
+                    bat '''dotnet restore HelloWorldConsoleApp.csproj'''
             }
         }
         
