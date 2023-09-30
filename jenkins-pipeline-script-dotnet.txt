@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the source code from your repository
+                git 'https://github.com/harshalschaudhari/HelloWorldConsoleApp.git'
+            }
+        }
+ 
+        stage('RestoreNuget') {
+            steps {
+                // Check out the source code from your repository
+                bat '''C:/ProgramData/chocolatey/bin/nuget.exe restore HelloWorldConsoleApp.csproj'''
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                  // Build the .NET project
+                bat 'dotnet msbuild HelloWorldConsoleApp.csproj'
+
+            }
+        }
+    }
+}
