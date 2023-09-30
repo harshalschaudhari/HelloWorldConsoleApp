@@ -12,7 +12,7 @@ pipeline {
         stage('RestoreNuget') {
             steps {
                 // Check out the source code from your repository
-                bat '''C:/ProgramData/chocolatey/bin/nuget.exe restore HelloWorldConsoleApp.csproj'''
+                bat '''dotnet restore HelloWorldConsoleApp.csproj'''
             }
         }
         
